@@ -29,8 +29,10 @@ export default new Vuex.Store({
     },
     UPDATE_INSTRUMENT(state, payload) {
         state.concatedInstruments.map(item => {
-            if(item.symbol === payload[0].symbol)
-          item.price = payload[0].markPrice
+            if(item.symbol === payload[0].symbol && payload[0].indicativeSettlePrice !== undefined) {
+              item.price = payload[0].indicativeSettlePrice
+            }
+
         })
     },
     SET_SELECTED_QUOTE(state, payload) {

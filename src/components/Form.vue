@@ -3,7 +3,7 @@
         <div class="form__header">Market</div>
         <div class="form__input">
             <span>Quantity</span>
-            <input type="number" @input="onInput" value="1" v-model="quantity">
+            <input type="number" @input="onInput" @blur="checkZero($event)" value="1" v-model.number="quantity">
         </div>
         <button @click="makeOrder('buy')" class="form__button">Buy</button>
         <button @click="makeOrder('sell')" class="form__button">Sell</button>
@@ -25,10 +25,14 @@
                 const
                     val = target.value,
                     newVal = 1;
-
-                if (val < 1) {
+                if (val < 0) {
                     target.value = newVal;
                     target.dispatchEvent(new Event('input'));
+                }
+            },
+            checkZero({target}) {
+                if(target.value === "0") {
+                    this.quantity = 1
                 }
             },
             makeOrder(action) {

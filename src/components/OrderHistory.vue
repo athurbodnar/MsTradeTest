@@ -15,7 +15,7 @@
             <div class="row__element">{{item.orderQty}}</div>
             <div class="row__element">{{item.timestamp}}</div>
             <div class="row__element">{{item.side}}</div>
-            <div class="row__element">{{item.price}}</div>
+            <div class="row__element">{{item.price | correctNumber}}</div>
             <div class="row__element">{{item.ordStatus}}</div>
         </div>
     </div>

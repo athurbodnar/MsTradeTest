@@ -16,7 +16,7 @@
             @click="changeSelectedQuote(item.symbol, index)"
     >
       <div class="row__element">{{item.symbol}}</div>
-      <div class="row__element">{{item.price}}</div>
+      <div class="row__element">{{item.price | correctNumber}}</div>
     </div>
   </div>
 </template>

@@ -10,10 +10,10 @@
             </div>
             <div v-for="(item, index) in quoteHistory" :key="`${index}-key`" class="row">
                 <div class="row__element">{{item.timestamp}}</div>
-                <div class="row__element">{{item.open}}</div>
-                <div class="row__element">{{item.high}}</div>
-                <div class="row__element">{{item.low}}</div>
-                <div class="row__element">{{item.close}}</div>
+                <div class="row__element">{{item.open | correctNumber}}</div>
+                <div class="row__element">{{item.high | correctNumber}}</div>
+                <div class="row__element">{{item.low | correctNumber}}</div>
+                <div class="row__element">{{item.close | correctNumber}}</div>
                 <div class="row__element">{{item.trades}}</div>
             </div>
     </div>
