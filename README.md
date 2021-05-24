@@ -1,4 +1,4 @@
-# bitmex
+# Ms Trade
 
 ## Project setup
 ```
